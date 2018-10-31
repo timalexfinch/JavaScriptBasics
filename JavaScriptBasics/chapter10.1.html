@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="Styles/js-examples.css" rel="stylesheet" />
+
+    <script src="Scripts/chapter10.1.js"></script>
+    <title>Chapter 10.1</title>
+</head>
+<body>
+    <header>
+        <h1>Chapter 10.1: Form Processing</h1>
+    </header>
+
+    <nav>
+        <a href="chapter01.html">Chapter 1</a>
+        <a href="chapter02.html">Chapter 2</a>
+        <a href="chapter03.html">Chapter 3</a>
+        <a href="chapter04.html">Chapter 4</a>
+        <a href="chapter05.html">Chapter 5</a>
+        <a href="chapter06.html">Chapter 6</a>
+        <a href="chapter07.html">Chapter 7</a>
+        <a href="chapter08.html">Chapter 8</a>
+        <a href="chapter09.html">Chapter 9</a>
+        <a href="chapter10.html">Chapter 10</a>
+        <a href="chapter10.1.html">Chapter 10.1</a>
+    </nav>
+    <main>
+        <h2>This is the tim finch demo to show you don't need to use document.form to access DOM elements</h2>
+        <form method="post">
+            <input id="rdoMale" type="radio" name="gender" value="male" checked> Male<br>
+            <input id="rdoFemale" type="radio" name="gender" value="female"> Female<br>
+            <input id="rdoOther" type="radio" name="gender" value="other"> Other<br>
+            <label id="gender"></label>
+        </form>
+        <form>
+            <fieldset>
+                <legend>Pick a Checkbox</legend>
+                <label for="milk">Milk:</label>
+                <input id="milk" type="checkbox" name="milk">
+                <label for="sugar">Sugar:</label>
+                <input id="sugar" type="checkbox" name="sugar">
+                <span id="milk_sugar">Select a drink option!</span>
+            </fieldset>
+        </form>
+        <hr /><br />
+        <h3>The next bit shows what happens if you try to POST anything back to the same HTML page</h3>
+        <p>
+            The next bit is all inside a "form" element, with method=post,
+            but if you try and post it back, it says: "Invalid HTTP verb" <br />
+            That's because you're posting back to an HTML page. The error messages include the following: <br />
+            "A request was sent to a virtual directory using the HTTP verb POST and the default document is a static file that does not support HTTP verbs other than GET or HEAD."
+        </p>
+        <form method="post">
+            First Name: <input id="txtFname" name="txtFname" type="text" value="andy" /><br /><br />
+            Last Name: <input id="txtLname" name="txtLname" type="text" value="basham" /><br /><br />
+            <button>html5 button</button><br /><br />
+            <input id="Button1" type="button" value="html 4 button" /><br /><br />
+            <input id="Submit1" type="submit" value="submit" /><br /><br />
+        </form>
+    </main>
+
+    <script src="Scripts/footer.js"></script>
+</body>
+</html>

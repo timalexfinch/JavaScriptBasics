@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Chapter 2</title>
+    <meta charset="utf-8" />
+    <link href="Styles/js-examples.css" rel="stylesheet" />
+    <link href="Styles/cards.css" rel="stylesheet" />
+    <script src="Scripts/chapter02.js"></script>
+</head>
+<body>
+    <header><h1>JavaScript Chapter 2</h1></header>
+    <script src="Scripts/nav-bar.js"></script>
+    <main>
+        <h2>The first example reads text input from the user </h2>
+        <p>
+            <br />
+            <label for="txtFirstName">First Name: </label>
+            <input type="text" id="txtFirstName" value="tim" /> <br />
+            <label for="txtLastName">Last Name: </label>
+            <input id="txtLastName" value="finch" /><br /><br />
+            <button onclick="hello()">Say Hello</button><br /><br />
+            <label id="lblSayHello">Answer will go here</label>
+            <hr />
+        </p>
+        <h2>The next example reads numbers from the user, and does some maths </h2>
+        <p>
+            <label for="txtNumber1">Enter a Number: </label>
+            <input id="txtNumber1" type="number" value="3" /><br />
+            <label for="txtNumber2">Enter a Number: </label>
+            <input id="txtNumber2" type="number" value="4" /><br /><br />
+            <button onclick="add()">Add</button>
+            <button onclick="subtract()">Subtract</button>
+            <button onclick="multiply()">Multiply</button>
+            <button onclick="divide()">Divide</button><br /><br />
+            <label id="lblMathsAnswer">Answer will go here</label><hr />
+        </p>
+
+        <h2>The last two examples demonstrate Arrays </h2>
+        <p>
+            <label for="txtName">Enter a Name: </label>
+            <input id="txtName" />
+            <button onclick="addToArray()">Add Name to Array</button><br /><br />
+            <label id="lblList">Your Array contains the following names: </label><br /><br />
+            <button onclick="howMany()">How Many Names?</button><br /><br />
+            <label id="lblHowMany"> </label><hr />
+        </p>
+
+        <p>
+            <button onclick="pickaCard()">Pick a card, any card</button><br /><br />
+            <label id="lblPickaCard"> </label><hr />
+        </p>
+
+        <div  class="playingCards">
+            <button onclick="dealaHand()">Deal me a Poker Hand</button><br /><br />
+            <label class="card back" id="lblCard1"> </label> 
+            <label class="card back" id="lblCard2"> </label> 
+            <label class="card back" id="lblCard3"> </label> 
+            <label class="card back" id="lblCard4"> </label> 
+            <label class="card back" id="lblCard5"> </label>
+        </div>
+
+        <!--<div class="playingCards">
+            <button onclick="dealaHand()">Deal me a Poker Hand</button><br /><br />
+
+            <ul class="hand">
+                <li><span class="card" id="lblCard1"> </span></li>
+                <li><span class="card" id="lblCard2"> </span></li>
+                <li><span class="card" id="lblCard3"> </span></li>
+                <li><span class="card" id="lblCard4"> </span></li>
+                <li><span class="card" id="lblCard5"> </span></li>
+            </ul>
+        </div>-->
+       
+
+        <!--<p>
+            <button onclick="dealaHand()">Deal me a Poker Hand</button><br /><br />
+            <label id="lblCard1"> </label> &nbsp;
+            <label id="lblCard2"> </label> &nbsp;
+            <label id="lblCard3"> </label> &nbsp;
+            <label id="lblCard4"> </label> &nbsp;
+            <label id="lblCard5"> </label>
+        </p>-->
+
+    </main>
+    <script src="Scripts/footer.js"></script>
+</body>
+</html>

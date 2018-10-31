@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Chapter 7</title>
+    <meta charset="utf-8" />
+    <link href="Styles/js-examples.css" rel="stylesheet" />
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js">
+    </script>
+    <script src="Scripts/chapter07.js" type="text/babel">
+    </script>
+
+</head>
+<body>
+    <header><h1>JavaScript Chapter 7</h1></header>
+    <script src="Scripts/nav-bar.js"></script>
+
+    <main>
+        <h2>ES6+</h2>
+        <p>
+            This page demos some of the new stuff from ES6 onwards.
+        </p>
+        <p>
+            An easy example. <br />
+            If the browser supports "let", with block-level scoping, num1 will = 3. If not, num1 will = 7
+            <br />
+            This should work fine in all browsers, even without babel.
+        </p>
+        <p>
+            <button onclick="blockLevelScoping1()">Block-level Scoping eg 1</button>
+        </p>
+        <div id="container1">
+            I am a div
+        </div>
+        <hr />
+        <p>
+            A more complex example.<br />
+            If ES6 is working, clicking on each div will show a different number. If not, all divs will say they are div #5
+            <br />
+            Without babel, works in Chrome, Firefox and Edge, fails in IE11
+        </p>
+        <p>
+            <button onclick="blockLevelScoping2()">Block-level Scoping eg 2</button>
+        </p>
+        <div id="container2">
+            I am a div
+        </div>
+        <hr />
+        <p>
+            If ES6 is working, when you press this button, a little "web page" should be inserted below the button, complete with a header and a footer
+        </p>
+        <p>
+            <button onclick="templateStrings()">Template Strings</button><br />
+            <label id="lblTemplateStrings"></label>
+        </p>
+        <hr />
+        <p>
+            If ES6 is working, when you press this button, it will say "UK" under the button
+        </p>
+        <p>
+            <button onclick="defaultParam()">Default Parameter</button><br />
+            <label id="lblCountry"></label>
+        </p>
+        <hr />
+        <p>
+            If ES6 is working, when you press this button,
+            it should say Hello 3 times. All 3 use the fat arrow. Each has a different signature
+        </p>
+        <p>
+            <label for="txtFirstName">First Name: </label>
+            <input type="text" id="txtFirstName" value="Billy" /> <br />
+            <label for="txtLastName">Last Name: </label>
+            <input id="txtLastName" value="Orum" /><br /><br />
+            <button onclick="HelloPerson()">Arrow Function</button><br />
+            <label id="lblFatArrow1"></label><br />
+            <label id="lblFatArrow2"></label><br />
+            <label id="lblFatArrow3"></label>
+        </p>
+        <hr />
+        <p>
+            If ES6 is working, when you press this button,
+            it should say granary and emmental
+        </p>
+        <p>
+            <button onclick="destructuring()">Destructuring Assignment</button><br />
+            <label id="lblDestructuring"></label>
+        </p>
+        <hr />
+        <p>
+            If ES6 is working, when you press this button,
+            it will show an array, then bits of the array
+        </p>
+        <p>
+            <button onclick="spread()">The Spread Operator</button><br /><br />
+            <label id="lblSpreadOriginal"></label><br />
+            <label id="lblSpreadFirstElement"></label><br />
+            <label id="lblSpreadLastElement"></label><br />
+            <label id="lblSpreadFirstThenRest"></label><br />
+            <label id="lblSpreadFinal"></label><br />
+        </p>
+        <hr />
+        <p>
+            <h2>Promises, Promises</h2>
+        <p>
+            Promises don't work in IE11 - even if you use the in-browser babel transformer!<br /><br />
+            <button onclick="getRandomUser()">Get Random User Web Service using a Promise</button>
+            <br /><br />
+        </p>
+        <p id="randomUser" class="text-center ">
+        </p>
+      
+    </main>
+    <script src="Scripts/footer.js"></script>
+</body>
+</html>

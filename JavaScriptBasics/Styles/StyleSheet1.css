@@ -1,0 +1,60 @@
+﻿body {
+    text-align: center;
+}
+
+header {
+    text-align: center;
+}
+
+h1 {
+    color: mediumblue;
+}
+
+h2 {
+    color: blueviolet;
+}
+
+p {
+    color: blue;
+    font-size: x-large;
+}
+
+label {
+    color: green;
+    font-size: x-large;
+}
+
+li {
+    color: green;
+    font-size: x-large;
+}
+
+footer p {
+    text-align: center;
+    font-size: x-small;
+    color: deepskyblue;
+}
+
+div {
+    background-color: lawngreen;
+}
+
+article {
+    margin: 1em;
+    background-color: white;
+    border: 1px dotted blue;
+}
+
+    article h2 {
+        margin: 0;
+        padding-left: 1em;
+        background-color: lightgreen;
+        border-bottom: 3px double purple;
+    }
+
+    article section {
+        margin: 1em;
+        font-size: 90%;
+    }
+
+

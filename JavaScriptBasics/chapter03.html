@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Chapter 3</title>
+    <meta charset="utf-8" />
+    <link href="Styles/js-examples.css" rel="stylesheet" />
+    <script src="Scripts/chapter03.js"></script>
+</head>
+<body>
+    <header><h1>JavaScript Chapter 3</h1></header>
+    <script src="Scripts/nav-bar.js"></script>
+  
+    <main>
+        <h2>The if Statement</h2>
+        <p>
+            <label for="txtUserName">Username: </label>
+            <input id="txtUserName" type="text" autofocus />
+            <br /><br />
+            <label for="txtPassword">Password: </label>
+            <input id="txtPassword" type="password" />
+            <br /><br />
+            <button onclick="login()">Login</button><br /><br />
+            <label id="lblLoginStatus">Not Logged In</label>
+            <hr />
+        </p>
+        <p>
+            <label for="txtNumber1">Enter a Number: </label>
+            <input id="txtNumber1" value="3" />
+            <button onclick="bigOrSmall()">Click Me</button><br /><br />
+            <label id="lblMathsAnswer">Answer will go here</label>
+            <hr />
+        </p>
+        <p>
+            <label for="txtWeekDay">Enter a weekday: </label>
+            <input id="txtWeekDay" />
+            <button onclick="whatDay()">The switch statement</button><br /><br />
+            <label id="lblSwitch2">Answer will go here</label><br />
+            <label id="lblSwitch">Answer will go here</label><hr />
+        </p>
+
+
+        <h2>Loops</h2>
+        <p>
+            Try these Loops:
+
+            <button onclick="doWhile()">While</button>
+            <button onclick="doWhileFragment()">While (using a Fragment)</button>
+            <button onclick="doFor()">For</button>
+            <button onclick="clearLabel()">Clear</button><br /><br />
+            <label id="lblLoop">Answer will go here</label>
+        </p>
+        <div id="container"></div>
+        <hr />
+        <p>
+            Press this button to display the contents of an array:
+            <button onclick="showArray()">Press Me</button><br />
+            <label id="lblShowArray">Answer will go here</label>
+            <hr />
+        </p>
+
+        <h2>Functions</h2>
+        <p>
+            This button will call functions from within functions<br /><br />
+
+            <button onclick="myfunction1()">Call My Functions</button><br /><br />
+            <hr />
+        </p>
+        <p>
+            This button will call a function to display an array
+            <br /><br />
+
+            <button onclick="createArray()">Display Array</button><br /><br />
+            <label id="lblFamilyNames">Answer will go here</label>
+            <br /><br /><hr />
+        </p>
+
+        <p>
+            This button will generate numbers for the Lottery
+            <br /><br />
+
+            <button onclick="lottery()">Generate Lottery Numbers</button><br /><br />
+            <label id="lblLotteryNumbers">Answer will go here</label>
+            <br /><br /><hr />
+        </p>
+        <p>
+            This button demostrates the difference between global and local vars
+            <br /><br />
+
+            <button onclick="scope()">Scope Example</button><br /><br />
+            <label id="lblScope">colour starts off as: </label>
+            <br /><br />
+        </p>
+    </main>
+    <script src="Scripts/footer.js"></script>
+</body>
+</html>

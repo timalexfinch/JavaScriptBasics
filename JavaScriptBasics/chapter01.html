@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Chapter 1</title>
+    <meta charset="utf-8" />
+    <link href="Styles/js-examples.css" rel="stylesheet" />
+    <script src="Scripts/chapter01.js"></script>
+</head>
+<body>
+    <header><h1>JavaScript Chapter 1</h1></header>
+
+    <script src="Scripts/nav-bar.js"></script>
+
+    <main>
+        <h2>Click any of these buttons to run some JavaScript:</h2>
+        <p>
+            <br />
+            <button onclick="HelloWorldAlert();">Pop up and Say Hello</button>
+            <br /><hr />
+            <input type="button" value="An HTML 4 Button" onclick="HelloWorldAlert();" />
+            <br /><br /><hr />
+            <button onclick="HelloWorld5();">Say Hello to a Label (old way)</button>
+            <br /><br />
+            <label id="lblSayHello5">Answer will go here</label>
+            <br /><br /><hr />
+            <button onclick="HelloWorld6();">Say Hello to a Label (new way)</button>
+        </p>
+        <div id='content'></div>
+    
+    </main>
+    <script src="Scripts/footer.js"></script>
+</body>
+</html>

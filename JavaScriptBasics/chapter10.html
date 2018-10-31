@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="Styles/js-examples.css" rel="stylesheet" />
+    <script src="Scripts/chapter10.js"></script>
+    <title>Chapter 10</title>
+</head>
+<body>
+    <header>
+        <h1>Chapter 10: Form Processing</h1>
+    </header>
+
+    <nav>
+        <a href="chapter01.html">Chapter 1</a>
+        <a href="chapter02.html">Chapter 2</a>
+        <a href="chapter03.html">Chapter 3</a>
+        <a href="chapter04.html">Chapter 4</a>
+        <a href="chapter05.html">Chapter 5</a>
+        <a href="chapter06.html">Chapter 6</a>
+        <a href="chapter07.html">Chapter 7</a>
+        <a href="chapter08.html">Chapter 8</a>
+        <a href="chapter09.html">Chapter 9</a>
+        <a href="chapter10.html">Chapter 10</a>
+        <a href="chapter10.1.html">Chapter 10.1</a>
+    </nav>
+    <main>
+        <!--<form   onsubmit="fun1()">
+            <p>
+                First Name: <input id="txtFname" name="txtFname" type="text" value="andy" /><br /><br />
+                Last Name: <input id="txtLname"  name="txtLname"  type="text" value="basham"/><br /><br />
+                <button>html5 button</button><br /><br />
+                <input id="Button1" type="button" value="html 4 button" /><br /><br />
+                <input id="Submit1" type="submit" value="submit" /><br /><br />
+
+            </p>
+        </form>
+        <p>
+            <label id="lblOutput">Answer here</label>
+        </p>-->
+
+
+        <form method="post" id="myform">
+            <section>
+                <h2>Checkboxes And Radio Buttons</h2>
+
+                <fieldset>
+                    <legend>Pick a Checkbox!</legend>
+                    <label for="m">Milk:</label>
+                    <input type="checkbox" name="milk">
+                    <label for="s">Sugar:</label>
+                    <input type="checkbox" name="sugar">
+                    <span id="milk_sugar">Select a drink option!</span>
+                </fieldset>
+
+                <fieldset id="colour">
+                    <legend id="tone">Radio Buttons</legend>
+                    Demonstrating which radio button was picked:<br>
+                    <input type="radio" name="mycolour" value="red">I like RED.</input><br>
+                    <input type="radio" name="mycolour" value="blue">No, Blue is best!</input><br>
+                    <input type="radio" name="mycolour" value="green">Green FTW!</input><br>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Radio Buttons (2)</legend>
+                    And the VALUE of those radio buttons:<br>
+                    <div id="drink">&nbsp;</div>
+                    <input type="radio" name="mydrink" value="tea">Cuppa Tea.</input><br>
+                    <input type="radio" name="mydrink" value="coffee">Black Coffee.</input><br>
+                    <input type="radio" name="mydrink" value="water">Water, methinks</input><br>
+                </fieldset>
+
+            </section>
+
+            <section>
+                <h2>Text Regions:</h2>
+
+                <p>This demonstrates the <code>disabled</code> property of a field</p>
+
+                <button type="button" id="lockButton">Lock Memo</button> Number of characters: <span id="letter_count">&nbsp;</span> <br>
+                <textarea id="memo" rows="5" cols="50">Type away here!</textarea>
+                <br><br>
+
+                Username: <input type="text" name="username" placeholder="Your Login"></input>
+                Password: <input type="password" name="pass" placeholder="8 characters or more"> </input><progress id="security" value="0">weak</progress>
+            </section>
+
+            <section>
+                <h2>Other Input Types</h2>
+
+                <canvas id="quantity_scale"></canvas><br>
+                <label>
+                    Quantity:
+                    <input type="number" name="qty" min="1" max="10" value="1">
+                </label><br><br>
+                <label>
+                    Temperature:<br>
+                    15<input type="range" name="temperature" min="15" max="25">25
+                </label>
+                <span id="room">&nbsp</span>
+                <br>
+                <canvas id="warmth_scale"></canvas>
+
+                <br><br>
+                <label>
+                    Pick a tone:
+                    <input type="color" name="shade">
+                </label>
+                <span id="choice">No colour yet...</span>
+            </section>
+        </form>
+    </main>
+    <script src="Scripts/footer.js"></script>
+    
+</body>
+</html>
+
+
+

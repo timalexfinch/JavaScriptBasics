@@ -1,0 +1,570 @@
+/*
+
+blue banner: #7aaedd
+
+top grey border: cccccc
+
+blue navbar: 4e81be
+dark under border: 111111
+
+---------
+
+RHS boxes: d1deee
+
+    background-color: #edf2f8;
+
+*/
+
+body {
+    background-color: #edf2f8;
+    margin: 0;
+    /*text-align: center;*/
+}
+
+/* -- IE workaround -- */
+header, nav, main, section, article, aside, footer {
+    display: block;
+    /*text-align: center;*/
+}
+
+
+header {
+    border-bottom: 1px solid #81afe0;
+    background-color: #81afe0;
+    background-image: url('resources/logo.png');
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    /*text-align: center;*/
+}
+
+    header h1 {
+        margin-top: 0;
+        color: white;
+        padding-top: 0.2em;
+        padding-left: 7em;
+        font-size: 250%;
+        text-shadow: 2px 2px 5px black;
+    }
+
+nav {
+    margin: 0;
+    border-top: 1px solid #cccccc;
+    background-color: #4e81be;
+    border-bottom: 1px solid #111111;
+    padding-bottom: 3px;
+    text-align: center;
+}
+
+    nav ul {
+        margin: 0.2em;
+        padding: 0;
+    }
+
+
+
+        nav ul li {
+            list-style: none;
+            margin-left: 0;
+            display: inline;
+        }
+
+    nav a {
+        text-decoration: none;
+        font-family: sans-serif;
+        font-size: 80%;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        color: white;
+        border-right: 1px solid #cccccc;
+    }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+
+
+h2 {
+    color: blueviolet;
+    font-size: x-large;
+}
+/*main h2 /* IE doesn't like "section h2"  {
+    border-top: 1px solid #cccccc;
+    background-color: #4e81be;
+    border-bottom: 1px solid #111111;
+    color: white;
+    padding-left: 1em;
+    margin-top: 0.5em;
+}
+*/
+
+main {
+    margin: 0.5em;
+    padding-top: 0;
+    text-align: center;
+    width: 75%;
+    border-bottom: 3px double #4e81be;
+    color: #4e81be;
+    padding-left: 1em;
+}
+
+main a {
+    font-weight: bold;
+    color: #81afe0;
+}
+
+    main a:visited {
+        color: #000077;
+    }
+
+    main a:hover {
+        background-color: white;
+    }
+
+
+article {
+    margin: 1em;
+    background-color: white;
+    border: 1px dotted blue;
+}
+
+    article h2 {
+        margin: 0;
+        padding-left: 1em;
+        background-color: lightgreen;
+        border-bottom: 3px double purple;
+    }
+
+    article section {
+        margin: 1em;
+        font-size: 60%;
+    }
+
+/*section {
+    border-bottom: 1px solid #4e81be;
+    padding-bottom: 1em;
+    background-color: #edf2f8;
+    margin: 0.5em;
+}*/
+
+footer {
+    border-top: 2px solid #4e81be;
+    background-color: #edf2f8;
+    padding-right: 2em;
+    text-align: right;
+    font-size: 80%;
+    text-align: center;
+}
+
+section p {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+
+#dates {
+    margin: 1em;
+    width: 90%;
+    border: 1px solid black;
+    text-align: center;
+}
+
+    #dates th {
+        background-color: #4e81be;
+        color: white;
+    }
+
+    #dates td {
+        border: 1px solid #4e81be;
+        background-color: #d1deee;
+    }
+
+    #dates th, #dates td {
+        font-family: sans-serif;
+        font-size: 90%;
+    }
+
+label {
+    color: green;
+    font-size: x-large;
+}
+
+li {
+    color: green;
+    font-size: x-large;
+}
+
+footer p {
+    text-align: center;
+    font-size: x-small;
+    color: dodgerblue;
+}
+
+/* =========== for the news stuff ============== */
+/*article.news p, div {
+    font-size: 90%;
+    font-family: verdana,arial,helvetica,sans-serif;
+}
+
+article.news p {
+    margin: 1em;
+    font-size: 80%;
+}
+
+article.news h1 {
+    margin-top: 0;
+    background-color: #980000;
+    background-image: url('../resources/logos/bbc.gif');
+    background-repeat: no-repeat;
+    background-position: right;
+    color: white;
+    height: 64px;
+    padding: 0px;
+    padding-left: 20px;
+    font-size: 200%;
+    width: 90%;
+}
+
+article.news h2 {
+    padding: 2px;
+    color: black;
+    font-size: 90%;
+    width: 50%;
+    background-color: #eeeeee;
+    border-bottom: 1px dotted gray;
+}*/
+
+
+
+code /* -- make it dark blue -- */ {
+    color: #000077;
+}
+
+/* -- chapter 6: events/errors -- */
+span.hotspot {
+    font-weight: bold;
+    border-bottom: 1px dotted blue;
+}
+
+/* ============= chapter 7 - DOM stuff ============== */
+
+/* -- this is the face we're shooting -- */
+#target {
+    position: absolute;
+    left: 450px;
+    top: 550px;
+}
+
+/* -- styles for the menu boxes -- */
+div.greybox {
+    border: 1px dotted blue;
+    background-color: #ddddff;
+    padding: 4px;
+    margin: 10px;
+    font-size: 80%;
+}
+
+#moodChooser {
+    width: 200px;
+    margin-bottom: 0;
+}
+
+#moodDisplay {
+    margin-top: 0;
+    width: 200px;
+    height: 50px;
+}
+
+.moodmenu {
+    display: block;
+    list-style-type: none;
+    margin: 0px;
+    padding: 3px;
+    /* Border around link table */
+    border: none;
+    text-decoration: none;
+}
+
+    .moodmenu li {
+        margin-top: 2px;
+        padding: 1px;
+        padding-left: 3px;
+        /* Border around menu table */
+        background-color: white;
+    }
+
+        .moodmenu li:hover {
+            /* -- hover-over style -- */
+            color: white;
+            background-color: black;
+        }
+
+/* --- the css for the infobox -- */
+#infobox {
+    width: 20em;
+    height: 1.5em;
+}
+
+/* -- used for Tooltip popups -- */
+.tipcontent {
+    border: 1px solid blue;
+    background-color: #ffffff;
+    opacity: 0.7;
+    margin: 0px;
+    padding: 2px;
+    font-size: 60%;
+    line-height: normal;
+}
+
+
+/* -- TOOLTIP style: note initial visibility --*/
+#tip1, #tip2, #tip3 {
+    visibility: hidden;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 20%;
+}
+
+/* +++ mouse coordinate boxes +++ */
+.coords {
+    padding-left: 3px;
+    padding-right: 3px;
+    border: 1px solid #779977;
+    background-color: #eeffee;
+}
+
+/* -- for the floating tooltips -- */
+
+#float1, #float2, #float3 {
+    visibility: hidden;
+    position: absolute;
+    margin: 0px;
+    padding: 2px;
+    border: 1px solid blue;
+    left: 0px;
+    top: 0px;
+    line-height: normal;
+    width: 20%;
+}
+
+#float3 /* -- slightly different to above -- */ {
+    border: 1px dotted red;
+    background-color: pink;
+    color: red;
+    width: 30%;
+}
+
+table.coords {
+    width: 250px;
+    text-align: center;
+}
+
+    table.coords thead tr td {
+        background-color: black;
+        color: white;
+        font-weight: bold;
+    }
+
+    table.coords tbody tr td {
+        border: 1px dotted gray;
+    }
+
+/* -- just style the "control buttons" */
+.control {
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    background-color: #777777;
+    color: #eeeeff;
+    padding: 0.2em;
+    font-size: 90%;
+}
+
+/* --- Styles for the two movable boxes -- */
+div.movable {
+    width: 30%;
+    height: 60px;
+    position: absolute;
+    border: 1px dotted black;
+    z-index: 0;
+    padding: 4px;
+    font-size: 70%;
+    background-color: #ffffff;
+}
+
+    div.movable h2 {
+        margin: 0;
+    }
+
+/* -- individual styles per box here -- */
+#dragbox1 {
+    left: 10px;
+    border-color: blue;
+    background-color: #CBC0FF;
+}
+
+#dragbox2 {
+    left: 50%;
+    border-color: black;
+    background-color: #eeeeee;
+    border-style: solid;
+    width: 200px;
+}
+
+/* ============= chapter 8 - Media/Canvas ============== */
+
+#music_player {
+    height: 1.5em;
+    width: 200px;
+    padding-left: 1em;
+    border: 1px solid black;
+    font-weight: bold;
+    background-color: #eeeeee;
+}
+
+/* ++ different classes just to show playing/stopped */
+.running {
+    color: black;
+    font-style: normal;
+}
+
+.stopped {
+    color: gray;
+    font-style: italic;
+}
+
+/* --- canvas regions -- */
+canvas {
+    border: 1px dotted #4e81be;
+    background-color: #eeeeee;
+}
+
+/* ============= chapter 9 - Form stuff ============== */
+#milk_sugar {
+    color: #777777;
+    font-style: italic;
+}
+
+/* --- class for the "infobox" bit to the right -- */
+div#feedback, div#logbox {
+    position: relative;
+    float: right;
+    top: -10px;
+    width: 40%;
+    height: 50px;
+}
+
+
+.halfWidth {
+    width: 45%;
+}
+
+/* #right-half { position: relative; float: right; top: -200px; } */
+
+
+/* -- lastly, just some others to make the form look nicer -- */
+fieldset {
+    margin: 1em;
+    background-color: #f7f7f7;
+}
+
+legend {
+    border: 1px solid black;
+    border-bottom: 3px double black;
+    border-top: 3px double black;
+    background-color: #dddddd;
+    padding-left: 1em;
+    padding-right: 1em;
+    font-weight: bold;
+}
+
+/* -- just for the memofield and lock/unlock button -- */
+textarea.enabled {
+    background-color: white;
+    border: 1px solid green;
+}
+
+textarea.disabled {
+    background-color: #dddddd;
+    border: 1px solid red;
+}
+
+.locked {
+    color: red;
+    font-weight: bold;
+}
+
+.unlocked {
+    color: green;
+    font-weight: normal;
+}
+
+#quantity_scale, #warmth_scale {
+    width: 200px;
+    height: 20px;
+    border: none;
+    background-color: transparent;
+}
+
+/* +++ 9.2: highlighting where validation failures have occured +++ */
+
+#username_test, #password_test, #partcode_test, #qty_test {
+    color: red;
+    font-weight: bold;
+}
+
+/* ============== framework stuff ======================= */
+
+p.description {
+    margin-left: 1em;
+    margin-right: 1em;
+    padding: 0.5em;
+    font-style: italic;
+    font-size: 100%;
+    background-color: #eeffee;
+    border-top: 1px solid green;
+    border-left: 1px solid green;
+}
+
+.left {
+    text-align: left;
+}
+
+.red {
+    color: red;
+}
+
+.black {
+    color: black;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 10%;
+    border-radius: 5px;
+}
+
+    .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+
+img {
+    border-radius: 5px 5px 0 0;
+}
+
+.container {
+    padding: 2px 16px;
+}
+
+#randomUser {
+    background-color: lightblue;
+    color: rebeccapurple;
+    font-size: large;
+    border-radius: 25px;
+}
+
+#userPicture {
+    border-radius: 50%;
+}
