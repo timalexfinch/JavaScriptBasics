@@ -14,30 +14,30 @@ var people = ["fred", "barney", "dino", "bam-bam", "wilma", "betty"];
 function showArray() {
     people.push("jane");
     people.push("jim");
-    document.getElementById("lblFamilyNames").innerHTML = people;
+    document.getElementById("lblFamilyNames").innerHTML = people.join(', ');
 }
 
 function sortArray() {
-    document.getElementById("lblSorted").innerHTML = people.sort();
+    document.getElementById("lblSorted").innerHTML = people.sort().join(', ');
 }
 
 function reverseArray() {
-    document.getElementById("lblReversed").innerHTML = people.reverse();
+    document.getElementById("lblReversed").innerHTML = people.reverse().join(', ');
 }
 
 var numbers = [7, 4, 100, 1, 10, 34, 2, 20, 300];
 function showNumArray() {
-    document.getElementById("lblNumbers").innerHTML = numbers;
+    document.getElementById("lblNumbers").innerHTML = numbers.join(', ');
 }
 
 function sortNumArray() {
     document.getElementById("lblSortedNumbers").innerHTML =
-        numbers.sort(function (a, b) { return a - b; });
+        numbers.sort(function (a, b) { return a - b; }).join(', ');
 }
 
 function reverseNumArray() {
     document.getElementById("lblReversedNumbers").innerHTML =
-        numbers.reverse(function (a, b) { return b - a; });
+        numbers.reverse(function (a, b) { return b - a; }).join(', ');
 }
 
 // First, here's the "Java-like" way of writing a function ("Statement syntax"):

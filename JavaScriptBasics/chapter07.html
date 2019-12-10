@@ -4,10 +4,7 @@
     <title>Chapter 7</title>
     <meta charset="utf-8" />
     <link href="Styles/js-examples.css" rel="stylesheet" />
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js">
-    </script>
-    <script src="Scripts/chapter07.js" type="text/babel">
-    </script>
+    <script src="Scripts/chapter07.js" defer></script>
 
 </head>
 <body>
@@ -15,99 +12,96 @@
     <script src="Scripts/nav-bar.js"></script>
 
     <main>
-        <h2>ES6+</h2>
+        <h2>This page demos JavaScript Objects, Properties and Methods</h2>
+        
         <p>
-            This page demos some of the new stuff from ES6 onwards.
-        </p>
-        <p>
-            An easy example. <br />
-            If the browser supports "let", with block-level scoping, num1 will = 3. If not, num1 will = 7
-            <br />
-            This should work fine in all browsers, even without babel.
-        </p>
-        <p>
-            <button onclick="blockLevelScoping1()">Block-level Scoping eg 1</button>
-        </p>
-        <div id="container1">
-            I am a div
-        </div>
-        <hr />
-        <p>
-            A more complex example.<br />
-            If ES6 is working, clicking on each div will show a different number. If not, all divs will say they are div #5
-            <br />
-            Without babel, works in Chrome, Firefox and Edge, fails in IE11
-        </p>
-        <p>
-            <button onclick="blockLevelScoping2()">Block-level Scoping eg 2</button>
-        </p>
-        <div id="container2">
-            I am a div
-        </div>
-        <hr />
-        <p>
-            If ES6 is working, when you press this button, a little "web page" should be inserted below the button, complete with a header and a footer
-        </p>
-        <p>
-            <button onclick="templateStrings()">Template Strings</button><br />
-            <label id="lblTemplateStrings"></label>
+            <button id="btnCreatePerson">Create and Display a single object</button><br /><br />
+            <label id="lblPerson1"></label><br /><br />
+            <label id="lblPerson2"></label><br /><br />
+            <label id="lblPerson3"></label><br /><br />
         </p>
         <hr />
+       
         <p>
-            If ES6 is working, when you press this button, it will say "UK" under the button
+            <label for="txtBirthday">What is your date of birth: </label>
+            <input id="txtBirthday" value="01 Jan 1970" />
+            <button onclick="showBirthday()">Press Me</button><br /><br />
+            <label id="lblShowBirthday">Answer will go here</label>
+            <hr />
         </p>
         <p>
-            <button onclick="defaultParam()">Default Parameter</button><br />
-            <label id="lblCountry"></label>
-        </p>
-        <hr />
-        <p>
-            If ES6 is working, when you press this button,
-            it should say Hello 3 times. All 3 use the fat arrow. Each has a different signature
-        </p>
-        <p>
-            <label for="txtFirstName">First Name: </label>
-            <input type="text" id="txtFirstName" value="Billy" /> <br />
-            <label for="txtLastName">Last Name: </label>
-            <input id="txtLastName" value="Orum" /><br /><br />
-            <button onclick="HelloPerson()">Arrow Function</button><br />
-            <label id="lblFatArrow1"></label><br />
-            <label id="lblFatArrow2"></label><br />
-            <label id="lblFatArrow3"></label>
-        </p>
-        <hr />
-        <p>
-            If ES6 is working, when you press this button,
-            it should say granary and emmental
-        </p>
-        <p>
-            <button onclick="destructuring()">Destructuring Assignment</button><br />
-            <label id="lblDestructuring"></label>
-        </p>
-        <hr />
-        <p>
-            If ES6 is working, when you press this button,
-            it will show an array, then bits of the array
-        </p>
-        <p>
-            <button onclick="spread()">The Spread Operator</button><br /><br />
-            <label id="lblSpreadOriginal"></label><br />
-            <label id="lblSpreadFirstElement"></label><br />
-            <label id="lblSpreadLastElement"></label><br />
-            <label id="lblSpreadFirstThenRest"></label><br />
-            <label id="lblSpreadFinal"></label><br />
-        </p>
-        <hr />
-        <p>
-            <h2>Promises, Promises</h2>
-        <p>
-            Promises don't work in IE11 - even if you use the in-browser babel transformer!<br /><br />
-            <button onclick="getRandomUser()">Get Random User Web Service using a Promise</button>
+            <button onclick="showArray()">Display Array</button><br /><br />
+            <label id="lblFamilyNames">Answer will go here</label>
             <br /><br />
+            <button onclick="sortArray()">Sort Array</button><br /><br />
+            <label id="lblSorted">Answer will go here</label>
+            <br /><br />
+            <button onclick="reverseArray()">Reverse Array</button><br /><br />
+            <label id="lblReversed">Answer will go here</label>
+            <br /><br />
+            <hr />
         </p>
-        <p id="randomUser" class="text-center ">
+
+        <p>
+            <button onclick="showNumArray()">Display Array of Numbers</button><br /><br />
+            <label id="lblNumbers">Answer will go here</label>
+            <br /><br />
+            <button onclick="sortNumArray()">Sort Array of Numbers</button><br /><br />
+            <label id="lblSortedNumbers">Answer will go here</label>
+            <br /><br />
+            <button onclick="reverseNumArray()">Reverse Array of Numbers</button><br /><br />
+            <label id="lblReversedNumbers">Answer will go here</label>
+            <br /><br />
+            <hr />
         </p>
-      
+
+        <p>
+            <button onclick="daysTillXmas()">Days till Christmas?</button> <br /><br />
+            <label id="lblDaysTillXmas">Answer will go here</label>
+            <br /><br />
+            <label for="txtBirthday2">What is your date of birth: </label>
+            <input id="txtBirthday2" value="1960-04-26" />
+            <button onclick="daysOld()">How many days old am I?</button><br /><br />
+            <label id="lblDaysOld">Answer will go here</label>
+            <br /><br />
+            <button onclick="minsInaWeek()">Minutes in a Working Week?</button><br /><br />
+            <label id="lblMinsInaWeek">Answer will go here</label>
+            <br /><br />
+            <button onclick="smokingTime()">Smoking Time</button><br /><br />
+            <label id="lblSmokingTime">Answer will go here</label>
+            <br /><br />
+            <hr />
+        </p>
+
+        <p>
+            <br />
+            <label for="txtFirstName">First Name: </label>
+            <input id="txtFirstName" value="tim" /> <br />
+            <label for="txtLastName">Last Name: </label>
+            <input id="txtLastName" value="finch" /><br />
+            <label for="txtPostCode">Post Code: </label>
+            <input id="txtPostCode" value="HR8 3YP" /><br /><br />
+            <button onclick="createEmployee()">Create an Employee</button><br /><br />
+            <label id="lblOutput">You have no Employees</label><br /><br />
+            <label id="lblAllEmployees">This label will show a list of Employee names and postcodes</label><br /><br />
+            <label id="lblOneEmployee">This label will show a list of *all* the properties of an Employee - including functions, Expando Properties, and stuff dredged up from the Prototype chain</label><br /><br /><hr />
+        </p>
+
+        <p>
+            <br />
+            <label for="txtProductID">Product ID: </label>
+            <input id="txtProductID" value="100" /><br />
+            <label for="txtProductName">Product Name: </label>
+            <input id="txtProductName" value="widget" /> <br /><br />
+            <button onclick="createProduct()">Create a Product</button><br /><br />
+            <label id="lblOutput2">Answer will go here</label><br /><br /><hr />
+        </p>
+        <p class="left">
+            <button onclick="showNav()">Show me the browser stuff</button>
+            <button onclick="showDoc()">Show me the document stuff</button>
+            <button onclick="clearlbl()">Clear</button><br /><br />
+            <label id="lblNav">Answer will go here</label><br /><br />
+        </p>
     </main>
     <script src="Scripts/footer.js"></script>
 </body>

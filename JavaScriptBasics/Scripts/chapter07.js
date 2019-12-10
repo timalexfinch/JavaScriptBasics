@@ -1,209 +1,234 @@
 ﻿/*
- * Chapter 7 - ES6+
+ * Chapter 7 - Objects
  * 
  */
 'use strict';
 
-function blockLevelScoping1() {
-    // This fn just demos "let" block-level scoping
-    // All browsers can do this without babel
+document.getElementById('btnCreatePerson').addEventListener('click', createPerson);
 
-    let num1 = 3;
-    let flag = true;
-    while (flag) {
-        let num1 = 7;
-        flag = false;
-    }
-    let div = document.getElementById('container1');
-    div.innerHTML = 'num1 = ' + num1;
-    // If the browser doesn't understand "let", this last line 
-    // will say num1 = 7.
-    // If the browser understands "let", it will give no error, 
-    // just say num1 = 3
-}
+function createPerson() {
+    // First the Object Constructor Notation:
 
+    //function Person(first, last, age, eye) {
+    //    this.firstName = first;
+    //    this.lastName = last;
+    //    this.age = age;
+    //    this.eyeColor = eye;
+    //    this.fullName = function () {
+    //        return this.firstName + " " + this.lastName;
+    //    };
+    //}
 
-function blockLevelScoping2() {
-    // This fn also just demos let block-level scoping
-    // IE11 *can't* do this without babel
+    //var person = new Person('Menna', 'Speake', 18, 'grey');
+    //var person = new Person();
 
-    var div, container = document.getElementById('container2');
-    for (let i = 0; i < 5; i++) {
-        div = document.createElement('div');
-        div.onclick = function () {
-            alert('This is div #' + i);
-        };
+    // Now the Object Literal Notation:
 
-        div.innerText = 'div number: ' + i;
-        container.appendChild(div);
-    }
-}
-
-function templateStrings() {
-    var articleTitle = "Tim's Article 1";
-    var articleBody = "<p>Tim's Article Body</p>  <p>Vel dapibus a, blandit quis erat vivamus elementum aliquam luctus etiam fringilla pretium sem vitae sodales mauris id nulla est praesent laoreet, metus vel auctor aliquam, eros purus vulputate leo, eget consequat neque quam id tellus duis ultricies tempor tortor, vitae dignissim ligula mattis nec in hac habitasse platea dictumst ut arcu enim, dictum quis ultrices id, sagittis eget nulla sed nunc mi, congue ut ultricies ac, varius a eros donec porttitor, libero fermentum fringilla laoreet, eros arcu sodales ante, ut dictum risus lectus vel quam integer ultricies, nunc eget elementum euismod, orci enim vestibulum orci, nec suscipit urna odio et tellus suspendisse suscipit orci sit amet sem venenatis nec lobortis sem suscipit nullam nec imperdiet velit mauris eu nisi a felis imperdiet porta at ac nulla vivamus faucibus felis nec dolor pretium eget pellentesque dolor suscipit maecenas vitae enim arcu, at tincidunt nunc pellentesque eleifend vulputate lacus, vel semper.</p >";
-
-    document.getElementById('lblTemplateStrings').innerHTML =
-        `
-        <section>
-        <header>
-            <h1>Template Strings</h1>
-        </header>
-        <article>
-            <h2>${articleTitle}</h2>
-            ${articleBody}
-        </article>
-    </section>
-    <footer>
-        <p>
-            &copy; ${new Date().getFullYear()} | Inserted using ES6 a Template String
-        </p>
-    </footer>
-        `;
-}
-
-function defaultParam() {
-    // whatCountry('belgium');
-    whatCountry();
-}
-
-function whatCountry(country = 'uk') {
-    document.getElementById('lblCountry').innerHTML = country;
-}
-
-function HelloPerson() {
-    // 1st with no arg:
-    hello1();
-
-    // Now with 2 args:
-    var firstName = document.getElementById("txtFirstName").value;
-    var lastName = document.getElementById("txtLastName").value;
-
-    hello2(firstName, lastName);
-
-    // Finally, takes 2 args and returns a value
-    var greeting = hello3(firstName, lastName);
-    document.getElementById('lblFatArrow3').innerHTML = greeting;
-}
-
-// Fat Arrow with no args:
-var hello1 = () => document.getElementById('lblFatArrow1').innerHTML = 'Hello!';
-
-// Fat Arrow with 2 args:
-var hello2 = (fname, sname) => document.getElementById('lblFatArrow2').innerHTML = `Hello ${fname} ${sname}!`;
-
-// Fat Arrow with 2 args and a return value:
-var hello3 = (fname, sname) => {
-    return `Hello ${fname} ${sname}!`;
-};
-
-var destructuring = () => {
-    var sandwich = {
-        bread: 'granary',
-        meat: 'ham',
-        cheese: 'emmental',
-        fillings: ['lettuce', 'tomato', 'cucumber', 'mayo']
+    var person = {
+        firstName: "Annie",
+        lastName: "Benning",
+        age: 50,
+        eyeColor: "blue",
+        fullName: function () {
+            return this.firstName + " " + this.lastName;
+        }
     };
 
-    var { bread, cheese } = sandwich;
+    document.getElementById('lblPerson1').innerHTML =
+        person.fullName() + ' is ' + person.age + ' years old';
+    //person.firstName + ' ' + person.lastName + ' is ' + person.age + ' years old';
 
-    document.getElementById('lblDestructuring').innerHTML = `${bread} ${cheese}`;
 
-    //var fname = 'tim';
-    //var sname = 'finch';
-    //var person = { fname, sname };
-    //document.getElementById('lblDestructuring').innerHTML = `${person.fname} ${person.sname}`;
+    // Either of the next two line work fine. They are equivalent.
+    person.lastName = 'Finch';
+    // person['lastName'] = 'Finch';
+    document.getElementById('lblPerson2').innerHTML =
+        person.firstName + ' got married and is now ' + person.firstName + ' ' + person.lastName;
 
-};
-
-const spread = () => {
-    const list1 = ['one', 'two', 'three', 'four', 'five'];
-
-    const [first] = list1;
-    const [last] = [...list1].reverse();
-    const [firstone, ...rest] = list1;
-
-    document.getElementById('lblSpreadOriginal').innerHTML = `Original List = <strong>${list1}</strong>`;
-    document.getElementById('lblSpreadFirstElement').innerHTML = `First = <strong>${first}</strong>`;
-    document.getElementById('lblSpreadLastElement').innerHTML = `Last = <strong>${last}</strong>`;
-    document.getElementById('lblSpreadFirstThenRest').innerHTML = `First = <strong>${firstone}</strong>, Rest = <strong>${rest}</strong>`;
-    document.getElementById('lblSpreadFinal').innerHTML = `The original list is unchanged: <strong>${list1}</strong>`;
-
-};
-
-// This last function shows how to use raw javascript and promises instead of jquery
-// to call the RandomUser Web Service
-function getRandomUser() {
-
-    var promise =
-        new Promise((resolves, rejects) => {
-            const apiURL = 'https://randomuser.me/api/';
-            const request = new XMLHttpRequest();
-            request.open('GET', apiURL);
-            request.onload = () =>
-                (request.status === 200) ?
-                    resolves(JSON.parse(request.response).results) :
-                    rejects(Error(request.statusText));
-            request.onerror = (err) => rejects(err);
-            request.send();
-        });
-
-    promise.then(
-        gotUser,
-        // members => console.log(members),
-        err => console.error(
-            new Error('Cant load random user'))
-    );
+    // Now an Expando Property:
+    person.Mojo = true;
+    if (person.Mojo) {
+        document.getElementById('lblPerson3').innerHTML =
+            'Hey! ' + person.firstName + ' has just found her Mojo!';
+    }
 }
 
-function gotUser(user) {
-    var thisUser = user[0];
-
-    document.getElementById('randomUser').innerHTML =
-
-        '<img id=userPicture src=' + thisUser.picture.large + ' /><br /><br />' +
-        thisUser.name.title + ' ' +
-        thisUser.name.first + ' ' +
-        thisUser.name.last + '<br />' +
-        thisUser.location.street + '<br />' +
-        thisUser.location.city + '<br />' +
-        thisUser.nat + '<br />' +
-        thisUser.email + '<br />' +
-        'Username: ' +
-        thisUser.login.username + '<br /><br />';
+function showBirthday() {
+    var response = document.getElementById("txtBirthday").value;
+    var birthday = new Date(response);
+    document.getElementById("lblShowBirthday").innerHTML =
+        "You were born on: " + birthday.toDateString();
 }
 
-// Alternative syntax (needs some work....)
+var people = ["fred", "barney", "dino", "bam-bam", "wilma", "betty"];
+function showArray() {
+    people.push("jane");
+    people.push("jim");
+    document.getElementById("lblFamilyNames").innerHTML = people.join(', ');
+}
 
-//class HttpClient {
-//    static get(url, headerOptions) {
-//        return fetch(url, {
-//            method: 'GET',
-//            cache: 'no-cache',
-//            headers: headerOptions,
-//            mode: 'cors',
-//        }).then((res) => {
-//            // promise
-//            return new Promise((resolve, reject) => {
-//                if (res.ok) {
-//                    console.log(`Response Status: ${res.status}`);
-//                    resolve(res.json());
-//                } else {
-//                    reject(new Error(res.statusText));
-//                }
-//            });
-//        });
-//    }
+function sortArray() {
+    document.getElementById("lblSorted").innerHTML = people.sort().join(', ');
+}
 
-//    static post(url, body, headerOptions) {
-//        return fetch(url, {
-//            method: 'POST', // *GET, POST, PUT, DELETE, etc.
-//            body: JSON.stringify(body),
-//            cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-//            headers: headerOptions,
-//            mode: 'cors', // no-cors, cors, *same-origin
-//            redirect: 'follow', // manual, *follow, error
-//            referrer: 'no-referrer', // *client, no-referrer
-//        });
-//    }
+function reverseArray() {
+    document.getElementById("lblReversed").innerHTML = people.reverse().join(', ');
+}
+
+var numbers = [7, 4, 100, 1, 10, 34, 2, 20, 300];
+function showNumArray() {
+    document.getElementById("lblNumbers").innerHTML = numbers.join(', ');
+}
+
+function sortNumArray() {
+    document.getElementById("lblSortedNumbers").innerHTML =
+        numbers.sort(function (a, b) { return a - b; }).join(', ');
+}
+
+function reverseNumArray() {
+    document.getElementById("lblReversedNumbers").innerHTML =
+        numbers.reverse(function (a, b) { return b - a; }).join(', ');
+}
+
+// First, here's the "Java-like" way of writing a function ("Statement syntax"):
+// function Employee(fname, lname, postCode) {
+//    this.fname = fname;
+//    this.lname = lname;
+//    this.postCode = postCode;
+
+//    this.fullName = function () {
+//        return this.fname + " " + this.lname;
+//    };
+
+//    this.toString = function () {
+//        return this.fname + " " + this.lname + " " + this.postcode;
+//    };
 //}
+
+
+// Now here's the alternative JavaScript way ("Expression syntax"):
+
+var Employee = function (fname, lname, postCode) {
+    this.fname = fname;
+    this.lname = lname;
+    this.postCode = postCode;
+
+    this.fullName = function () {
+        return this.fname + " " + this.lname;
+    };
+
+    this.toString = function () {
+        return this.fname + " " + this.lname + " " + this.postCode;
+    };
+};
+
+var empList = [];
+function createEmployee() {
+    //var emp = new Employee("jim", "smith", "HR1 2TD");
+    //empList.push(emp);
+    var emp = new Employee();
+    emp.fname = document.getElementById("txtFirstName").value;
+    emp.lname = document.getElementById("txtLastName").value;
+    emp.postCode = document.getElementById("txtPostCode").value;
+    emp.mojo = true;
+    empList.push(emp);
+    document.getElementById("lblOutput").innerHTML = "<strong>" + emp.fullName() + "</strong> added to list of employees";
+    document.getElementById("lblAllEmployees").innerHTML = "<h4>All Employees in the Array:</h4>" + disco(empList);
+    document.getElementById("lblOneEmployee").innerHTML = "<h4>Details of just the last Employee, including functions and Expando Properties:</h4>" + disco(emp);
+}
+
+/*
+ * This function discovers all the key:value pairs of 
+ * any object that you give it.
+ */
+function disco(ob) {
+    var s = "";
+    for (var x in ob)
+        // Comment this next line in if you only want to see data - not functions, and nothing from the prototype chain. See Crockford p23, 24
+        //if (typeof ob[x] !== 'function') 
+        s += "<strong>" + x + "</strong>" + "  =>  " + ob[x] + "<br />";
+    return s;
+    // The loop given above will call toString(). 
+    // If you don't have your own toString() method in your object, you'll get the 
+    // JavaScript built-in from the prototype.
+    // This will return: [object Object]
+}
+
+function showDoc() {
+    document.getElementById("lblNav").innerHTML = disco(document);
+}
+
+function showNav() {
+    document.getElementById("lblNav").innerHTML = disco(navigator);
+}
+
+function clearlbl() {
+    document.getElementById("lblNav").innerHTML = "";
+}
+
+
+
+// This next function works, but is cumbersome...
+//function displayEmployees() {
+//    var names = [];
+//    for (var key in empList) {
+//        var e = empList[key];
+//        names.push(e.fullName());
+//    }
+//    document.getElementById("lblAllEmployees").innerHTML = names;
+//}
+
+function createProduct() {
+    var product = new Object();
+    product.id = document.getElementById("txtProductID").value;
+    product.name = document.getElementById("txtProductName").value;
+    document.getElementById("lblOutput2").innerHTML = "<strong>" + product.name + "</strong> created";
+}
+
+function daysTillXmas() {
+    // -- Current date & year
+    var now = new Date(), thisYear = now.getFullYear();
+
+    // -- Christmas morning for this year:
+    var xmasDay = new Date(thisYear, 11, 25, 0, 0, 0, 0);
+    var toGo = xmasDay - now;  // <-- difference in milliseconds:
+    var msec = 24 * 60 * 60 * 1000;  //  <-- one day in milliseconds
+    var numDays = Math.floor(toGo / msec);
+    document.getElementById("lblDaysTillXmas").innerHTML = "Christmas in <strong>" + numDays + "</strong> days!";
+}
+
+function daysOld() {
+    // -- Current date & milliseconds in a year:
+    var now = new Date(), msec = 24 * 60 * 60 * 1000;
+    // -- for someone born lunchtime on 1st of April, 1970:
+    // var birthday = new Date("April 1, 1970 12:00:00");
+
+    var response = document.getElementById("txtBirthday2").value;
+    var birthday = new Date(response);
+
+    var ageIn_msec = now - birthday;  // <-- difference in ms
+    // == write it out in days, rather than milliseconds:
+    var numDaysOld = Math.floor(ageIn_msec / msec);
+
+    document.getElementById("lblDaysOld").innerHTML =
+        "You are: <strong> " + numDaysOld.toLocaleString() + "</strong> days old!";
+}
+
+function minsInaWeek() {
+    var mins = 60 * 37.5;
+    document.getElementById("lblMinsInaWeek").innerHTML =
+        "There are: <strong> " + mins.toLocaleString() + "</strong> minutes in a working week";
+}
+
+function smokingTime() {
+    var sBreak = 5 * 2 * 365; // <-- 5 mins * twice *  365 days
+
+    document.getElementById("lblSmokingTime").innerHTML =
+        "In one year, you will have smoked for: <strong> " + sBreak.toLocaleString() + "</strong> minutes, which is: <strong> " +
+        Math.round(sBreak / 60) + "</strong>  hours, which is about: <strong> " +
+        Math.round(sBreak / (60 * 24)) + "</strong> whole days non-stop";
+
+}
+
+
+

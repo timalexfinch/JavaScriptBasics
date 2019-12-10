@@ -13,7 +13,8 @@ document.write(
     '<a href="chapter05.html">Chapter 5</a>' +
     '<a href="chapter06.html">Chapter 6</a>' +
     '<a href="chapter07.html">Chapter 7</a>' +
-    '<a href="chapter08.html">Chapter 8</a>' +
-    '<a href="chapter09.html">Chapter 9</a>' +
-    '<a href="chapter10.html">Chapter 10</a>' +
+    //'<a href="chapter08.html">Chapter 8</a>' +
+    '<a href="chapter09.html">ES6+</a>' +
+    '<a href="chapter10.html">HTML Forms</a>' +
+    '<a href="chapter10.1.html">More Forms</a>' +
     '</nav>');

@@ -6,7 +6,7 @@
 "use strict";
 function HelloWorldAlert() {
     //alert("The needs of the many outweigh the needs of the few");
-        alert("Hello World");
+    alert("Hello World");
 }
 
 // Here's the alternative function syntax:
@@ -14,9 +14,10 @@ function HelloWorldAlert() {
 //      alert("Hello World");
 //};
 
-function HelloWorld5() {
+function HelloWorld() {
     // 1st, here's the old way to produce output:
-    document.getElementById("lblSayHello5").innerHTML = "Hello World!";
+    document.getElementById("lblSayHello").innerHTML = "Hello World!";
+    //document.getElementById("lblSayHello5").innerHTML = "<h1>Hello,World!</h1><br>How are you today?<br /><hr /><p> Here's some more text</p>";
 
     // innerText can be more efficient, but you can't put HTML in it:
     // document.getElementById("lblSayHello5").innerText = "Hello World!";
@@ -36,9 +37,10 @@ function HelloWorld6() {
     l.appendChild(t);
 
     // Finally put the label onto the page:
-    document.getElementById("content").appendChild(l);
+    document.querySelector('#content').appendChild(l);
+    // document.getElementById("content").appendChild(l);
 
-     // the next line demostrates ProtoType syntax:
+    // the next line demostrates ProtoType syntax:
     //$("lblSayHello5").innerHTML = "Hello World!";
 
     // the next lines show concatenating some text: 
@@ -48,3 +50,4 @@ function HelloWorld6() {
     //document.write(page);
     //document.getElementById("lblSayHello5").innerHTML = page;
 }
+

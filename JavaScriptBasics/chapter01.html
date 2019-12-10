@@ -4,13 +4,11 @@
     <title>Chapter 1</title>
     <meta charset="utf-8" />
     <link href="Styles/js-examples.css" rel="stylesheet" />
-    <script src="Scripts/chapter01.js"></script>
+    <script src="Scripts/chapter01.js" async></script>
 </head>
 <body>
     <header><h1>JavaScript Chapter 1</h1></header>
-
     <script src="Scripts/nav-bar.js"></script>
-
     <main>
         <h2>Click any of these buttons to run some JavaScript:</h2>
         <p>
@@ -19,15 +17,17 @@
             <br /><hr />
             <input type="button" value="An HTML 4 Button" onclick="HelloWorldAlert();" />
             <br /><br /><hr />
-            <button onclick="HelloWorld5();">Say Hello to a Label (old way)</button>
+            <button onclick="HelloWorld();">Say Hello to a Label (old way)</button>
             <br /><br />
-            <label id="lblSayHello5">Answer will go here</label>
+            <label id="lblSayHello">Answer will go here</label>
             <br /><br /><hr />
-            <button onclick="HelloWorld6();">Say Hello to a Label (new way)</button>
         </p>
-        <div id='content'></div>
-    
+        <p>
+            <button onclick="HelloWorld6();">Say Hello to a Label (new way)</button>
+            <br /><br />
+            <label id='content'></label>
+        </p>
     </main>
-    <script src="Scripts/footer.js"></script>
+    <footer><p> &copy; 2019 tim finch</p></footer>
 </body>
 </html>
